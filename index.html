@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>PRIA — Principal's Responsible Intelligent Assistant</title>
+</head>
+<body>
+<section class="birthday-banner">
+  <div class="balloon b1">🎈</div><div class="balloon b2">🎈</div>
+  <div class="confetti">✦ ✧ • ✦ • ✧ ✦</div>
+  <div class="birthday-copy">
+    <div class="small-birthday">🎉 A SPECIAL DAY 🎉</div>
+    <h1>Happy Birthday, Sir! 🎂</h1>
+    <p>Wishing you a wonderful year ahead filled with happiness, success and joy.</p>
+    <div class="from">From, <strong>Gaurav Ghumare</strong> ❤️</div>
+  </div>
+  <div class="portrait-wrap"><img src="sir-photo.png" alt="Principal Sir"></div>
+</section>
+
+<header class="topbar">
+  <div>
+    <div class="badge">DAILY GOALS • SMART REMINDERS</div>
+    <h2>Good day, Sir.</h2>
+    <p>Keep all your daily goals in one place. PRIA reminds you at the exact time.</p>
+  </div>
+  <div class="clock" id="clock">--:--:--</div>
+</header>
+
+<main>
+<section class="grid">
+<div class="card">
+<h3>➕ Add a Goal</h3>
+<form id="goalForm">
+<label>Goal / Activity<input id="goalText" required placeholder="Go to rest"></label>
+<label>Date<input id="goalDate" type="date" required></label>
+<label>Time<input id="goalTime" type="time" required></label>
+<button class="btn primary" type="submit">Add Goal</button>
+</form>
+</div>
+
+<div class="card progressCard">
+<h3>📊 Today's Progress</h3>
+<div class="progressTrack"><div id="progressBar"></div></div>
+<div class="percent" id="progressText">0%</div>
+<p id="progressSub">0 of 0 goals completed</p>
+</div>
+</section>
+
+<section class="card">
+<div class="sectionTitle">
+<h3>📅 Today's Goals</h3>
+<div class="actions">
+<button id="notifyBtn" class="btn secondary">🔔 Allow Notifications & Alarms</button>
+<button id="testAlarmBtn" class="btn secondary">🔊 Test Alarm</button>
+</div>
+</div>
+<div id="goalList"></div>
+<div id="empty" class="empty">No goals for today. Add your first goal above.</div>
+</section>
+
+<section class="card">
+<h3>🏆 Perfect Day</h3>
+<div id="perfectDay" class="perfect">Complete every goal to unlock today's Perfect Day.</div>
+</section>
+
+<section class="card">
+<h3>🎁 Made especially for Principal Sir</h3>
+<p>PRIA supports multiple goals, exact-time reminders, repeating alarms and notifications.</p>
+</section>
+</main>
+
+<div id="alarmOverlay" class="overlay hidden">
+<div class="alarmBox">
+<div class="alarmIcon">🔔</div>
+<span class="badge">PRIA REMINDER</span>
+<h2>IT'S TIME</h2>
+<p id="alarmMessage"></p>
+<p class="repeatNote">🔊 The alarm will keep repeating until the goal is marked complete or the alarm is dismissed.</p>
+<button id="completeAlarmBtn" class="btn primary">Mark Goal Complete</button>
+<button id="dismissBtn" class="btn secondary full">Dismiss Alarm</button>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
